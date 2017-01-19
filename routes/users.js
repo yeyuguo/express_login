@@ -45,7 +45,7 @@ router.route("/login").get(function(req, res) { // 到达此路径则渲染login
                 res.send(404);
                 //	res.redirect("/login");
             } else { //信息匹配成功，则将此对象（匹配到的user) 赋给session.user  并返回成功
-                // req.session.user = doc;
+                req.session.user = doc;
                 res.send(200);
 
                 // res.redirect("/login/home");

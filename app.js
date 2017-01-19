@@ -46,9 +46,17 @@ app.use(function(req, res, next) {
     if (err) {
         // res.locals.message  在 html 中 <%- message %> 显示
         res.locals.message = '<div class="alert alert-danger" style="margin-bottom:20px;color:red;">' + err + '</div>';
+    } else {
+        // console.log({ res.locals.user })
+        var aa = res['locals']['user']
+        console.log({ aa })
     }
+
     next();
 });
+
+
+// (res.locals.user) => console.log({res.locals.user})
 
 app.use('/', index);
 app.use('/users', users); // login.html  register.html 页面
@@ -57,7 +65,6 @@ app.use('/users', users); // login.html  register.html 页面
 // 路由设置完后
 global.dbHandel = require('./database/dbHandel');
 global.db = mongoose.connect("mongodb://127.0.0.1:27017/nodedb");
-
 
 
 // catch 404 and forward to error handler
