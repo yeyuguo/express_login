@@ -18,7 +18,7 @@ router.route('/logout').get(function(req, res) {
 router.route('/login/home').get(function(req, res) {
     // if (!req.session.user) { //到达/home路径首先判断是否已经登录
     //     req.session.error = "请先登录"
-    //     res.redirect(301, "/uesrs/login"); //未登录则重定向到 /login 路径
+    //     res.redirect(301, "/users/login"); //未登录则重定向到 /login 路径
     // }
     res.render("home", { title: 'Home' }); //已登录则渲染home页面
 })
@@ -54,6 +54,9 @@ router.route("/login").get(function(req, res) { // 到达此路径则渲染login
     });
 });
 
+// router.route('/register').get(function(req, res, next) {
+//     res.send('暂未开放注册功能');
+// })
 router.route('/register').get(function(req, res, next) {
     res.render("register1", { title: '注册页' });
     // res.send('this is register page')
