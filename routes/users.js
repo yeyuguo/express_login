@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     res.render("users", { title: '注册登录页' });
     // res.send('user page');
+    
 });
 
 router.route('/logout').get(function(req, res) {

@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     res.render('index', { title: '首页' });
     // res.render('login', { title: '首页' });
+    // res.redirect(301, "/users/login"); // 跳转首页
 });
 
 
