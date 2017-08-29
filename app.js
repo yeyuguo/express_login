@@ -9,6 +9,7 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var config = require('./config')
 
 var app = express();
 
@@ -64,7 +65,8 @@ app.use('/users', users); // login.html  register.html 页面
 
 // 路由设置完后
 global.dbHandel = require('./database/dbHandel');
-global.db = mongoose.connect("mongodb://127.0.0.1:27017/nodedb");
+// global.db = mongoose.connect("mongodb://127.0.0.1:27017/nodedb");
+global.db = mongoose.connect(`mongodb://${config.mongoose.server}:${config.mongoose.port}/${config.mongoose.dbs[0]}`);
 
 
 // catch 404 and forward to error handler

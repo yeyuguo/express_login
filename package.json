@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "test": "supervisor ./bin/www"
+    "start": "nodemon index.js",
+    "test": "supervisor index.js"
   },
   "dependencies": {
     "body-parser": "~1.15.2",

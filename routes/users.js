@@ -21,7 +21,7 @@ router.route('/login/home').get(function(req, res) {
     //     req.session.error = "请先登录"
     //     res.redirect(301, "/users/login"); //未登录则重定向到 /login 路径
     // }
-    res.render("home", { title: 'Home' }); //已登录则渲染home页面
+    res.render("home", { title: 'Home' }); //已登录则渲染home页面  
 })
 
 router.route("/login").get(function(req, res) { // 到达此路径则渲染login文件，并传出title值供 login.html使用
@@ -48,7 +48,6 @@ router.route("/login").get(function(req, res) { // 到达此路径则渲染login
             } else { //信息匹配成功，则将此对象（匹配到的user) 赋给session.user  并返回成功
                 req.session.user = doc;
                 res.send(200);
-
                 // res.redirect("/login/home");
             }
         }
